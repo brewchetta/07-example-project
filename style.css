@@ -1,17 +1,38 @@
+#starting-screen {
+    text-align: center;
+}
+
 #word-area span {
     margin: 0.5rem;
     font-size: 2rem;
 }
 
-#victory-modal {
+.modal {
     left: 50vw;
     top: 45vh;
     position: fixed;
     transform: translateX(-50%);
     border: solid black 2px;
     padding: 1em 1.5em;
-    background-color: greenyellow;
     font-size: 20px;
     text-align: center;
+    display: none;
+}
+
+#victory-modal {
+    background-color: greenyellow;
+}
+
+#defeat-modal {
+    background-color: red;
+}
+
+#defeat-modal img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+#game-area {
     display: none;
 }

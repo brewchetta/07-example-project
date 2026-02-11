@@ -4,30 +4,30 @@
 
     - a user will be able to see a welcome screen with a start button and the text "Shall we play a game"
     
-    - a user will be able to guess letters
+    DONE - a user will be able to guess letters
 
     - when a user guesses a letter that not in the word they get an alert that tells them its not in the word --> style the alert
         - modal
 
-    - as people guess wrong draw the parts of the hangman
+    DONE - as people guess wrong draw the parts of the hangman
 
-    - when a user has guessed all the letters in a word they will get a victory screen --> congrats gif
+    DONE - when a user has guessed all the letters in a word they will get a victory screen --> congrats gif
     
-    - when a user has failed to guess all the letters they will get a losing screen --> fatality screen
+    DONE - when a user has failed to guess all the letters they will get a losing screen --> fatality screen
 
-    - users will be able to restart the game with a button
+    DONE - users will be able to restart the game with a button
 
-    - words are randomly selected each time
+    DONE - words are randomly selected each time
 
     - users will be able to get word hints --> button to get a hint
         - for a body part for a letter at < 50%
 
-    - letters guessed are displayed below the buttons
+    DONE - letters guessed are displayed below the buttons
 
     - add a moveable frogger to the screen bc why not 
 
 mvp - minimum viable product
 
-    - want to be able to guess letters
+    DONE - want to be able to guess letters
 
-    - I want a hidden word that will be revealed as letters are guessed
+    DONE - I want a hidden word that will be revealed as letters are guessed

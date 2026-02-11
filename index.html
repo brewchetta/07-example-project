@@ -8,52 +8,85 @@
     <script defer src="index.js"></script>
 </head>
 <body>
+
+    <!-- STARTING SCREEN -->
+
+    <div id="starting-screen">
+
+        <h1>Hangman</h1>
+
+        <img src="assets/starting-gif.gif" alt="I want to play a game">
+
+        <br>
+
+        <button>Click to Start</button>
+
+    </div>
+
+
+    <!-- GAME AREA  -->
+
+    <div id="game-area">
+
+        <h1>Hangman</h1>
     
-    <h1>Hangman</h1>
+        <img id="hangman-img" src="https://www.oligalma.com/downloads/images/hangman/hangman/4.jpg" alt="6 guesses remain">
+        
+        <button id="reset-button">Restart</button>
 
-    <img id="hangman-img" src="https://www.oligalma.com/downloads/images/hangman/hangman/4.jpg" alt="6 guesses remain">
+        <p>Current Score: <span id="score-area">0</span></p>
 
-    <p>Current Score: <span id="score-area">0</span></p>
+        <div id="word-area">
+            <span>_</span><span>_</span><span>_</span>
+        </div>
 
-    <div id="word-area">
-        <span>_</span><span>_</span><span>_</span>
+        <div id="letters-keyboard">
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+            <button>E</button>
+            <button>F</button>
+            <button>G</button>
+            <button>H</button>
+            <button>I</button>
+            <button>J</button>
+            <button>K</button>
+            <button>L</button>
+            <button>M</button>
+            <button>N</button>
+            <button>O</button>
+            <button>P</button>
+            <button>Q</button>
+            <button>R</button>
+            <button>S</button>
+            <button>T</button>
+            <button>U</button>
+            <button>V</button>
+            <button>W</button>
+            <button>X</button>
+            <button>Y</button>
+            <button>Z</button>
+        </div>
+
+        <div id="guessed-letters-area">
+            <h2>Guessed Letters:</h2>
+        </div>
     </div>
 
-    <div id="letters-keyboard">
-        <button>A</button>
-        <button>B</button>
-        <button>C</button>
-        <button>D</button>
-        <button>E</button>
-        <button>F</button>
-        <button>G</button>
-        <button>H</button>
-        <button>I</button>
-        <button>J</button>
-        <button>K</button>
-        <button>L</button>
-        <button>M</button>
-        <button>N</button>
-        <button>O</button>
-        <button>P</button>
-        <button>Q</button>
-        <button>R</button>
-        <button>S</button>
-        <button>T</button>
-        <button>U</button>
-        <button>V</button>
-        <button>W</button>
-        <button>X</button>
-        <button>Y</button>
-        <button>Z</button>
-    </div>
+    <!-- VICTORY MODAL -->
 
-    <div id="guessed-letters-area">
-        <h2>Guessed Letters:</h2>
-    </div>
-
-    <div id="victory-modal">
+    <div id="victory-modal" class="modal">
         <p>Congratulations! You correctly guessed the word!</p>
+        <button>Play Again!!!</button>
+    </div>
+
+    <!-- DEFEAT MODAL -->
+    
+    <div id="defeat-modal" class="modal">
+        <p>FATALITY</p>
+        <img src="" alt="fatality">
+        <br>
         <button>Play Again!!!</button>
     </div>
 

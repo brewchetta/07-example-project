@@ -1,7 +1,7 @@
 // MAIN VARIABLES //
 
 // pool of words to choose from
-const words = [ "javascript" ]
+const words = [ "abc", "abcd", "abcde" ]
 
 let guessedLetters = []
 
@@ -10,6 +10,10 @@ let guessesRemaining = 6
 
 let currentScore = 0
 
+// starting screen div
+const startingScreen = document.querySelector("#starting-screen")
+// main game screen div
+const gameArea = document.querySelector("#game-area")
 // shows guessed letters and remaining spaces
 const wordArea = document.querySelector("#word-area") 
 // filled with buttons for keyboard
@@ -22,6 +26,19 @@ const guessedLettersArea = document.querySelector("#guessed-letters-area")
 const scoreArea = document.querySelector("#score-area")
 // popup for victory
 const victoryModal = document.querySelector("#victory-modal")
+// popup for defeat
+const defeatModal = document.querySelector("#defeat-modal")
+// reset game button on victory
+const victoryResetButton = document.querySelector("#victory-modal button")
+// reset game button on defeat
+const defeatResetButton = document.querySelector("#defeat-modal button")
+// reset button
+const resetButton = document.querySelector("#reset-button")
+// starting screen button
+const startingGameButton = document.querySelector("#starting-screen button")
+
+
+// HANGMAN IMAGE //
 
 // urls for different stages of hangman imgs
 const hangmanImg01 = "https://www.oligalma.com/downloads/images/hangman/hangman/4.jpg"
@@ -42,22 +59,61 @@ const hangmanImageSteps = {
     0: hangmanImg07,
 }
 
+// FATALITY IMAGES //
+
+const fatality01 = "assets/fatality01.gif"
+const fatality02 = "assets/fatality02.gif"
+const fatality03 = "assets/fatality03.gif"
+const fatality04 = "assets/fatality04.gif"
+const fatality05 = "assets/fatality05.gif"
+
+const fatalities = [
+    fatality01,
+    fatality02,
+    fatality03,
+    fatality04,
+    fatality05
+]
+
 
 // FUNCTIONS
 
 // wipes old game data and initializes data for new game
 function initializeNewGame() {
+    startingScreen.style.display = "none"
+    gameArea.style.display = "block"
+    clearGuessedLettersArea()
     clearWordArea()
     setRandomWord()
     buildWordArea()
+    resetHangmanImg()
     guessesRemaining = 6
+    resetScore()
     guessedLetters = []
+    victoryModal.style.display = ""
+    defeatModal.style.display = ""
 }
 
 // clear spans from #word-area
 function clearWordArea() {
     const wordAreaSpans = document.querySelectorAll("#word-area span")
     wordAreaSpans.forEach( span => span.remove() )
+}
+
+// clears #guessed-letters-area
+function clearGuessedLettersArea() {
+    const guessedLetterSpans = document.querySelectorAll("#guessed-letters-area span")
+    guessedLetterSpans.forEach( span => span.remove() )
+}
+
+function resetHangmanImg() {
+    hangmanImg.src = hangmanImg01
+    hangmanImg.alt = "6 guesses remaining"
+}
+
+function resetScore() {
+    currentScore = 0
+    scoreArea.textContent = 0
 }
 
 // sets current word to random word from words
@@ -136,6 +192,8 @@ function handleIncorrectGuess(chosenLetter) {
         hangmanImg.src = nextImageURL
         hangmanImg.alt = `${guessesRemaining} guesses remaining`
     }
+    //check if a loss occured
+    checkLossCondition()
 }
 
 
@@ -164,5 +222,23 @@ function checkWinCondition() {
     victoryModal.style.display = "block"
 }
 
-// TESTING AREA
-initializeNewGame()
+
+function checkLossCondition() {
+    if (guessesRemaining === 0) {
+        defeatModal.style.display = "block"
+        const index = Math.floor( Math.random() * fatalities.length )
+        const currentFatalityImg = fatalities[index]
+        const fatalityImg = document.querySelector("#defeat-modal img")
+        fatalityImg.src = currentFatalityImg
+    }
+}
+
+
+// starting screen button
+startingGameButton.addEventListener("click", initializeNewGame)
+// reset game on clicking reset button in victory modal
+victoryResetButton.addEventListener("click", initializeNewGame)
+// reset game on clicking reset button in defeat modal
+defeatResetButton.addEventListener("click", initializeNewGame)
+// reset game on clicking reset button at top of page
+resetButton.addEventListener("click", initializeNewGame)

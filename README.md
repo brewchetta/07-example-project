@@ -1,0 +1,2 @@
+# JS Example Project
+## Hangman

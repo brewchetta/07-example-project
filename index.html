@@ -11,6 +11,10 @@
     
     <h1>Hangman</h1>
 
+    <img id="hangman-img" src="https://www.oligalma.com/downloads/images/hangman/hangman/4.jpg" alt="6 guesses remain">
+
+    <p>Current Score: <span id="score-area">0</span></p>
+
     <div id="word-area">
         <span>_</span><span>_</span><span>_</span>
     </div>
@@ -42,6 +46,15 @@
         <button>X</button>
         <button>Y</button>
         <button>Z</button>
+    </div>
+
+    <div id="guessed-letters-area">
+        <h2>Guessed Letters:</h2>
+    </div>
+
+    <div id="victory-modal">
+        <p>Congratulations! You correctly guessed the word!</p>
+        <button>Play Again!!!</button>
     </div>
 
 </body>

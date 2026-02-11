@@ -2,3 +2,16 @@
     margin: 0.5rem;
     font-size: 2rem;
 }
+
+#victory-modal {
+    left: 50vw;
+    top: 45vh;
+    position: fixed;
+    transform: translateX(-50%);
+    border: solid black 2px;
+    padding: 1em 1.5em;
+    background-color: greenyellow;
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}

@@ -22,6 +22,8 @@
     - users will be able to get word hints --> button to get a hint
         - for a body part for a letter at < 50%
 
+    - letters guessed are displayed below the buttons
+
     - add a moveable frogger to the screen bc why not 
 
 mvp - minimum viable product

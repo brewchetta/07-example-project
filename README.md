@@ -2,6 +2,8 @@
 
 ## Hangman
 
+[Link to hosted project](https://brewchetta.github.io/07-example-project/)
+
 ## Mini Project
 
 1. Build user stories ("a user will be able to...")

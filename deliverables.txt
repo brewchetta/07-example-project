@@ -2,7 +2,7 @@
 
 - user stories:
 
-    - a user will be able to see a welcome screen with a start button and the text "Shall we play a game"
+    DONE - a user will be able to see a welcome screen with a start button and the text "Shall we play a game"
     
     DONE - a user will be able to guess letters
 
@@ -19,12 +19,12 @@
 
     DONE - words are randomly selected each time
 
-    - users will be able to get word hints --> button to get a hint
+    - users will be able to get word hints --> if a user takes a certain amount of time
         - for a body part for a letter at < 50%
 
     DONE - letters guessed are displayed below the buttons
 
-    - add a moveable frogger to the screen bc why not 
+    DONE - add a moveable frogger to the screen bc why not 
 
 mvp - minimum viable product
 

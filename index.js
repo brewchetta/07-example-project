@@ -92,6 +92,7 @@ function initializeNewGame() {
     guessedLetters = []
     victoryModal.style.display = ""
     defeatModal.style.display = ""
+    startTimer()
 }
 
 // clear spans from #word-area
@@ -133,6 +134,28 @@ function buildWordArea() {
     })
 }
 
+
+// HINT TIMER
+
+// timer will track the timer when we start it
+let timer = null
+
+function startTimer() {
+    const seconds = 60
+    // setTimeout will run a callback fn after the number of seconds have elapsed
+    timer = setTimeout( giveHint, seconds * 1000 )
+}
+// this is the callback fn
+function giveHint() {
+    alert("Hint: This is a word")
+}
+// clearTimeout stops the current fn and we can call startTimer() again
+function resetTimer() {
+    clearTimeout( timer )
+    startTimer()
+}
+
+
 // DEFAULT EVENT LISTENERS
 
 lettersKeyboard.addEventListener("click", handleClickLetterKey)
@@ -151,6 +174,7 @@ function handleClickLetterKey( event ) {
     }
     guessedLetters.push(chosenLetter)
     updateGuessedLettersArea(chosenLetter)
+    resetTimer()
 
     // handle correct or incorrect guess
     if ( currentWord.includes(chosenLetter) ) {
@@ -220,6 +244,7 @@ function checkWinCondition() {
     }
 
     victoryModal.style.display = "block"
+    clearTimeout( timer )
 }
 
 
@@ -230,6 +255,7 @@ function checkLossCondition() {
         const currentFatalityImg = fatalities[index]
         const fatalityImg = document.querySelector("#defeat-modal img")
         fatalityImg.src = currentFatalityImg
+        clearTimeout( timer )
     }
 }
 
